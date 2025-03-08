@@ -1,0 +1,1207 @@
+<?xml version="1.0" encoding="utf-8"?>sss
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="RobotBarelangFCv2">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.021819 0.00036559 0.44071"
+        rpy="0 0 0" />
+      <mass
+        value="1.4192" />
+      <inertia
+        ixx="0.0013636"
+        ixy="2.5035E-07"
+        ixz="-6.0172E-05"
+        iyy="0.0013393"
+        iyz="4.8068E-07"
+        izz="0.0014954" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="HeadPan">
+    <inertial>
+      <origin
+        xyz="-0.00690715851776342 0.00011491832934192 0.0181588161003367"
+        rpy="0 0 0" />
+      <mass
+        value="0.0462633634793822" />
+      <inertia
+        ixx="7.75509641488574E-06"
+        ixy="-1.39714832801768E-07"
+        ixz="1.56705524549555E-09"
+        iyy="1.05149666401193E-05"
+        iyz="-5.63649456257371E-10"
+        izz="1.25360571590161E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/HeadPan.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/HeadPan.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Head_Pan"
+    type="revolute">
+    <origin
+      xyz="-0.0020904 1.551E-05 0.55919"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="HeadPan" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.9"
+      upper="1.9"
+      effort="1000"
+      velocity="100" />
+  </joint>
+  <link
+    name="HeadTilt">
+    <inertial>
+      <origin
+        xyz="0.0527231965370506 -0.0229840807532466 0.0182194907767464"
+        rpy="0 0 0" />
+      <mass
+        value="0.12343985298717" />
+      <inertia
+        ixx="7.2099043534812E-05"
+        ixy="-1.83941162549768E-08"
+        ixz="2.50654539919069E-06"
+        iyy="7.09245930084636E-05"
+        iyz="-3.64067914544146E-09"
+        izz="4.36923990913498E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/HeadTilt.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/HeadTilt.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Head_Tilt"
+    type="revolute">
+    <origin
+      xyz="0.00435597411124916 0.0229352636444304 0.0187499819805001"
+      rpy="0 0 0" />
+    <parent
+      link="HeadPan" />
+    <child
+      link="HeadTilt" />
+    <axis
+      xyz="0.0154980103256278 0.999879898625803 0" />
+    <limit
+      lower="-2"
+      upper="0.35"
+      effort="1000"
+      velocity="100" />
+  </joint>
+  <link
+    name="ShoulderR">
+    <inertial>
+      <origin
+        xyz="-0.000156484321006373 -0.0205014174148071 -0.00304876272481368"
+        rpy="0 0 0" />
+      <mass
+        value="0.010534896659227" />
+      <inertia
+        ixx="1.89996458140282E-06"
+        ixy="4.86801440577649E-09"
+        ixz="-1.75423657575243E-09"
+        iyy="2.5971478196704E-06"
+        iyz="-2.37823953533018E-07"
+        izz="1.91050463657821E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/ShoulderR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/ShoulderR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Shoulder_R"
+    type="revolute">
+    <origin
+      xyz="-0.0037409 -0.087473 0.52519"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="ShoulderR" />
+    <axis
+      xyz="-0.0074351 -0.99997 0" />
+    <limit
+      lower="-3.2"
+      upper="3.2"
+      effort="1000"
+      velocity="100" />
+  </joint>
+  <link
+    name="ArmUpperR">
+    <inertial>
+      <origin
+        xyz="-0.0244342127959208 -0.00847436198130949 -0.0357718784630593"
+        rpy="0 0 0" />
+      <mass
+        value="0.154678448528937" />
+      <inertia
+        ixx="4.54786894090666E-05"
+        ixy="-8.40790115457448E-09"
+        ixz="5.87331392387766E-08"
+        iyy="6.11992633224385E-05"
+        iyz="2.76823233408509E-07"
+        izz="3.89919971038739E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/ArmUpperR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/ArmUpperR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ArmUpper_R"
+    type="revolute">
+    <origin
+      xyz="0.0248860760663777 -0.0388261027790395 -0.0180334623688993"
+      rpy="-0.698131700801914 0.00132860804796026 -0.00743513405298813" />
+    <parent
+      link="ShoulderR" />
+    <child
+      link="ArmUpperR" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.3"
+      upper="0.76"
+      effort="1000"
+      velocity="100" />
+  </joint>
+  <link
+    name="ArmLowerR">
+    <inertial>
+      <origin
+        xyz="0.0240216694041203 -0.0290694370575308 -0.0191352227542041"
+        rpy="0 0 0" />
+      <mass
+        value="0.107970968559895" />
+      <inertia
+        ixx="3.31349088675279E-05"
+        ixy="2.59450673368748E-07"
+        ixz="7.24567265441542E-09"
+        iyy="6.58851118238035E-05"
+        iyz="-3.49128842826041E-07"
+        izz="5.50777864907688E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/ArmLowerR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/ArmLowerR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ArmLower_R"
+    type="revolute">
+    <origin
+      xyz="-0.00719800000000403 0.0251980000000493 -0.129679999999994"
+      rpy="0 0 0" />
+    <parent
+      link="ArmUpperR" />
+    <child
+      link="ArmLowerR" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.6"
+      upper="1.6"
+      effort="1000"
+      velocity="100" />
+  </joint>
+  <link
+    name="ShoulderL">
+    <inertial>
+      <origin
+        xyz="0.000261895646945925 0.0205006336529904 -0.00304679963338526"
+        rpy="0 0 0" />
+      <mass
+        value="0.0105348966592106" />
+      <inertia
+        ixx="1.89985591600681E-06"
+        ixy="-3.35441947308207E-09"
+        ixz="1.38774793779093E-09"
+        iyy="2.59727009772736E-06"
+        iyz="2.37673535765104E-07"
+        izz="1.91049102391572E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/ShoulderL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/ShoulderL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Shoulder_L"
+    type="revolute">
+    <origin
+      xyz="-0.0024398 0.087519 0.52519"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="ShoulderL" />
+    <axis
+      xyz="0.0074351 0.99997 0" />
+    <limit
+      lower="-3.5"
+      upper="3.5"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="ArmUpperL">
+    <inertial>
+      <origin
+        xyz="-0.0233521726601068 0.00848781218668862 -0.0357790732963709"
+        rpy="0 0 0" />
+      <mass
+        value="0.154667131533028" />
+      <inertia
+        ixx="4.54781293664204E-05"
+        ixy="8.4097507916865E-09"
+        ixz="5.94608683129661E-08"
+        iyy="6.11962642976461E-05"
+        iyz="-2.89048842856468E-07"
+        izz="3.89917109145693E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/ArmUpperL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/ArmUpperL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ArmUpper_L"
+    type="revolute">
+    <origin
+      xyz="0.0250050819909849 0.0387388001770201 -0.0167228679461669"
+      rpy="0.714066626697813 -0.0359123680458452 -0.0074351340529481" />
+    <parent
+      link="ShoulderL" />
+    <child
+      link="ArmUpperL" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.79"
+      upper="1.2"
+      effort="1000"
+      velocity="100" />
+  </joint>
+  <link
+    name="ArmLowerL">
+    <inertial>
+      <origin
+        xyz="0.0240180111362403 0.0293450060997243 -0.0191352227417643"
+        rpy="0 0 0" />
+      <mass
+        value="0.107970968690105" />
+      <inertia
+        ixx="3.31349742553083E-05"
+        ixy="-2.63421991518405E-07"
+        ixz="7.20441763467261E-09"
+        iyy="6.58850464639245E-05"
+        iyz="3.49076483964279E-07"
+        izz="5.50777865343941E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/ArmLowerL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/ArmLowerL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ArmLower_L"
+    type="revolute">
+    <origin
+      xyz="-0.00609999999999598 -0.0251599999998639 -0.129680000000032"
+      rpy="0 0 -0.000125029539284268" />
+    <parent
+      link="ArmUpperL" />
+    <child
+      link="ArmLowerL" />
+    <axis
+      xyz="0.00012502954251104 -0.999999992183807 0" />
+    <limit
+      lower="-1.6"
+      upper="1.6"
+      effort="1000"
+      velocity="100" />
+  </joint>
+  <link
+    name="HipYawR">
+    <inertial>
+      <origin
+        xyz="0.00285122406115462 -2.11994798149651E-05 -0.0222178914831862"
+        rpy="0 0 0" />
+      <mass
+        value="0.0140500625942956" />
+      <inertia
+        ixx="3.05902768277502E-06"
+        ixy="4.93690582987227E-09"
+        ixz="-1.37063946099208E-11"
+        iyy="3.72271108633773E-06"
+        iyz="9.64119296159335E-14"
+        izz="3.61846496909267E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/HipYawR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/HipYawR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="HipYaw_R"
+    type="revolute">
+    <origin
+      xyz="-0.0035164 -0.057274 0.357"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="HipYawR" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.6"
+      upper="1.6"
+      effort="1000"
+      velocity="100" />
+  </joint>
+  <link
+    name="HipRollR">
+    <inertial>
+      <origin
+        xyz="0.00162800282325819 -1.40784224958168E-05 -0.015359629515069"
+        rpy="0 0 0" />
+      <mass
+        value="0.183750638013675" />
+      <inertia
+        ixx="7.53846506801811E-05"
+        ixy="-3.02610072382258E-09"
+        ixz="-1.04263231338042E-06"
+        iyy="7.49848157393641E-05"
+        iyz="-1.01796776965825E-06"
+        izz="4.70217632086629E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/HipRollR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/HipRollR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="HipRoll_R"
+    type="revolute">
+    <origin
+      xyz="-0.0260792791362317 0.00019390650951806 -0.0498019999999997"
+      rpy="0 0 0" />
+    <parent
+      link="HipYawR" />
+    <child
+      link="HipRollR" />
+    <axis
+      xyz="-0.999972359518141 0.00743506554927857 0" />
+    <limit
+      lower="-1.6"
+      upper="1.6"
+      effort="1000"
+      velocity="100" />
+  </joint>
+  <link
+    name="HipPitchR">
+    <inertial>
+      <origin
+        xyz="0.00120866597127161 -0.028755463380451 -0.101964342665507"
+        rpy="0 0 0" />
+      <mass
+        value="0.116360319840204" />
+      <inertia
+        ixx="5.91437395755575E-05"
+        ixy="-4.9407835229343E-08"
+        ixz="1.71727090579536E-06"
+        iyy="5.21769624606641E-05"
+        iyz="1.01128324593234E-06"
+        izz="2.6866051661984E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/HipPitchR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/HipPitchR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="HipPitch_R"
+    type="revolute">
+    <origin
+      xyz="0.0279733625880428 0.0285928065344745 0"
+      rpy="0 0 0" />
+    <parent
+      link="HipRollR" />
+    <child
+      link="HipPitchR" />
+    <axis
+      xyz="-0.00743506554927671 -0.999972359518141 0" />
+    <limit
+      lower="-0.73"
+      upper="2.1"
+      effort="1000"
+      velocity="100" />
+  </joint>
+  <link
+    name="KneeR">
+    <inertial>
+      <origin
+        xyz="0.00325179188588987 -0.028824974200984 -0.0581965944929011"
+        rpy="0 0 0" />
+      <mass
+        value="0.0350678205920609" />
+      <inertia
+        ixx="5.13022356052749E-05"
+        ixy="8.59164520560579E-09"
+        ixz="-1.06513983194005E-06"
+        iyy="5.24586118948453E-05"
+        iyz="7.92298804149533E-09"
+        izz="5.43142113076226E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/KneeR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/KneeR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Knee_R"
+    type="revolute">
+    <origin
+      xyz="-1.18353794596807E-05 6.00896575499721E-05 -0.131109999424725"
+      rpy="0 0 0" />
+    <parent
+      link="HipPitchR" />
+    <child
+      link="KneeR" />
+    <axis
+      xyz="-0.00743506554927573 -0.999972359518141 0" />
+    <limit
+      lower="-2"
+      upper="0.12"
+      effort="1000"
+      velocity="100" />
+  </joint>
+  <link
+    name="AnklePitchR">
+    <inertial>
+      <origin
+        xyz="-0.0263419637933768 -0.0286101590517748 0.0153596304326817"
+        rpy="0 0 0" />
+      <mass
+        value="0.183750626703413" />
+      <inertia
+        ixx="7.53846468941236E-05"
+        ixy="-2.92208139465357E-09"
+        ixz="1.04590797193575E-06"
+        iyy="7.49848071783567E-05"
+        iyz="1.01460355001374E-06"
+        izz="4.70217586613898E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/AnklePitchR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/AnklePitchR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="AnklePitch_R"
+    type="revolute">
+    <origin
+      xyz="-1.22851924774375E-05 0 -0.131084719631287"
+      rpy="0 0 0" />
+    <parent
+      link="KneeR" />
+    <child
+      link="AnklePitchR" />
+    <axis
+      xyz="-0.00743506554926933 -0.999972359518141 0" />
+    <limit
+      lower="-0.9"
+      upper="1.7"
+      effort="1000"
+      velocity="100" />
+  </joint>
+  <link
+    name="AnkleRollR">
+    <inertial>
+      <origin
+        xyz="0.0337495406858341 -0.0138048641173407 -0.039422315121364"
+        rpy="0 0 0" />
+      <mass
+        value="0.0607027167529361" />
+      <inertia
+        ixx="3.68529238937509E-05"
+        ixy="-1.78802618684771E-06"
+        ixz="-1.73985099839123E-08"
+        iyy="9.15265295087655E-05"
+        iyz="-2.03188305670816E-09"
+        izz="0.000125002178414632" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/AnkleRollR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/AnkleRollR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="AnkleRoll_R"
+    type="revolute">
+    <origin
+      xyz="-0.0279733625881585 -0.0285928065344725 0"
+      rpy="0 0 0" />
+    <parent
+      link="AnklePitchR" />
+    <child
+      link="AnkleRollR" />
+    <axis
+      xyz="-0.999972359518141 0.00743506554926695 0" />
+    <limit
+      lower="-0.8"
+      upper="0.8"
+      effort="1000"
+      velocity="100" />
+  </joint>
+  <link
+    name="HipYawL">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/HipYawL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/HipYawL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="HipYaw_L"
+    type="revolute">
+    <origin
+      xyz="-0.002664319715544 0.0573204040653237 0.356996719056139"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="HipYawL" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.6"
+      upper="1.6"
+      effort="1000"
+      velocity="100" />
+  </joint>
+  <link
+    name="HipRollL">
+    <inertial>
+      <origin
+        xyz="0.00163147744633695 -6.40339644383814E-06 -0.0153596294565368"
+        rpy="0 0 0" />
+      <mass
+        value="0.183750637747668" />
+      <inertia
+        ixx="7.5384650692825E-05"
+        ixy="-3.02611592036076E-09"
+        ixz="-1.03070202894766E-06"
+        iyy="7.4984815720577E-05"
+        iyz="1.03004600940537E-06"
+        izz="4.70217631531812E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/HipRollL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/HipRollL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="HipRoll_L"
+    type="revolute">
+    <origin
+      xyz="-0.0260792791362284 0.000193906509519122 -0.049802000000004"
+      rpy="0 0 0" />
+    <parent
+      link="HipYawL" />
+    <child
+      link="HipRollL" />
+    <axis
+      xyz="-0.999972359518141 0.00743506554927869 0" />
+    <limit
+      lower="-1.6"
+      upper="1.6"
+      effort="1000"
+      velocity="100" />
+  </joint>
+  <link
+    name="HipPitchL">
+    <inertial>
+      <origin
+        xyz="0.0016407188315791 0.0287942778816241 -0.101964208911906"
+        rpy="0 0 0" />
+      <mass
+        value="0.116360320112221" />
+      <inertia
+        ixx="5.91434175589856E-05"
+        ixy="-4.9501380941318E-08"
+        ixz="1.70177003336781E-06"
+        iyy="5.21769638900003E-05"
+        iyz="-1.03670375691874E-06"
+        izz="2.68663723173073E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/HipPitchL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/HipPitchL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="HipPitch_L"
+    type="revolute">
+    <origin
+      xyz="0.0275451028124043 -0.0290056013737705 0"
+      rpy="0 0 0" />
+    <parent
+      link="HipRollL" />
+    <child
+      link="HipPitchL" />
+    <axis
+      xyz="0.00743506554927833 0.999972359518141 0" />
+    <limit
+      lower="-2.1"
+      upper="0.73"
+      effort="1000"
+      velocity="100" />
+  </joint>
+  <link
+    name="KneeL">
+    <inertial>
+      <origin
+        xyz="0.00368550310329332 0.028773393174313 -0.0581962695558096"
+        rpy="0 0 0" />
+      <mass
+        value="0.0350678205920586" />
+      <inertia
+        ixx="5.13024347527227E-05"
+        ixy="8.59016417329171E-09"
+        ixz="-1.06084295670467E-06"
+        iyy="5.24586119058541E-05"
+        iyz="7.89103897265555E-09"
+        izz="5.43122197229479E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/KneeL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/KneeL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Knee_L"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.13111"
+      rpy="0 0 0" />
+    <parent
+      link="HipPitchL" />
+    <child
+      link="KneeL" />
+    <axis
+      xyz="0.00743506554928085 0.999972359518141 0" />
+    <limit
+      lower="-0.12"
+      upper="2"
+      effort="1000"
+      velocity="100" />
+  </joint>
+  <link
+    name="AnklePitchL">
+    <inertial>
+      <origin
+        xyz="-0.0259170678860958 0.0289954696381584 0.0153596304904401"
+        rpy="0 0 0" />
+      <mass
+        value="0.183750626975429" />
+      <inertia
+        ixx="7.53846468850432E-05"
+        ixy="-2.92209519345334E-09"
+        ixz="1.02738354325052E-06"
+        iyy="7.498480719902E-05"
+        iyz="-1.03336119171005E-06"
+        izz="4.70217587178916E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/AnklePitchL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/AnklePitchL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="AnklePitch_L"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.131084720206796"
+      rpy="0 0 0" />
+    <parent
+      link="KneeL" />
+    <child
+      link="AnklePitchL" />
+    <axis
+      xyz="0.00743506554927966 0.999972359518141 0" />
+    <limit
+      lower="-1.7"
+      upper="0.9"
+      effort="1000"
+      velocity="100" />
+  </joint>
+  <link
+    name="AnkleRollL">
+    <inertial>
+      <origin
+        xyz="0.033950786799357 0.0132615483620149 -0.0394223151213187"
+        rpy="0 0 0" />
+      <mass
+        value="0.152204104868713" />
+      <inertia
+        ixx="9.25680529454742E-05"
+        ixy="6.55658331140036E-06"
+        ixz="-4.36244831454142E-08"
+        iyy="0.000229326597473439"
+        iyz="-5.09468039469341E-09"
+        izz="0.000313426576106545" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/AnkleRollL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBarelangFCv2/meshes/AnkleRollL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="AnkleRoll_L"
+    type="revolute">
+    <origin
+      xyz="-0.0275451028124044 0.0290056013737709 0"
+      rpy="0 0 0" />
+    <parent
+      link="AnklePitchL" />
+    <child
+      link="AnkleRollL" />
+    <axis
+      xyz="-0.999972359518141 0.00743506554927929 0" />
+    <limit
+      lower="-0.8"
+      upper="0.8"
+      effort="1000"
+      velocity="100" />
+  </joint>
+</robot>

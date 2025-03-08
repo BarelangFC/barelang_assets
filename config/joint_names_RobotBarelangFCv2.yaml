@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'Head_Pan', 'Head_Tilt', 'Shoulder_R', 'ArmUpper_R', 'ArmLower_R', 'Shoulder_L', 'ArmUpper_L', 'ArmLower_L', 'HipYaw_R', 'HipRoll_R', 'HipPitch_R', 'Knee_R', 'AnklePitch_R', 'AnkleRoll_R', 'HipYaw_L', 'HipRoll_L', 'HipPitch_L', 'Knee_L', 'AnklePitch_L', 'AnkleRoll_L', ]
