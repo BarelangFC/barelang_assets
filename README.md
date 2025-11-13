@@ -3,7 +3,7 @@
 This repository contains the BFCBotK URDF and mesh files. The BFCBotK model and meshes are in the `BFCBotK/` folder.
 
 Preview:
-![URDF preview](./Screenshot%20from%202025-10-27%2020-26-07.png)
+![URDF preview](./BFCBotK.png)
 
 Instructions and Tips
 - URDF Viewers that you can use:
