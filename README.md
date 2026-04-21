@@ -7,9 +7,11 @@ Note:
 - Need to fix barelangK
 
 BarelangK
+
 ![models preview](./barelangK.png)
 
 BarelangS
+
 ![models preview](./barelangS.png)
 
 Instructions and Tips
