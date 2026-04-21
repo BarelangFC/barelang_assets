@@ -1,6 +1,10 @@
 # Barelang Assets — URDF model (2025)
 
-This repository contains the Barelang Robot models.
+These're repository contains the Barelang Robot models.
+
+Note:
+- Fix XML model barelangS
+- Need to fix barelangK
 
 ![models preview](./barelangK.png)
 ![models preview](./barelangS.png)
@@ -15,7 +19,3 @@ Instructions and Tips
 
   Note: If you want to convert URDF to mjcf, simplify each STL. You can do this using MeshLab with 
   Filters->Remeshing, Simplification and Reconstruction->Simplification: Quadric Edge Collapse Decimation.
-
-Note:
-- Fix XML model barelangS
-- Need to fix barelangK
