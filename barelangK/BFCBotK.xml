@@ -1,0 +1,189 @@
+<mujoco model="BFCBotK">
+  <compiler meshdir="meshes/BFCBotK/" angle="radian"/>
+
+    <!-- KP=12 -->
+  <default>
+      <default class="mx106">
+          <position kp="21" forcerange="-8 8" />
+          <joint damping="1.7" armature="0.025" frictionloss="0.10" />
+      </default>
+      <default class="mx64">
+          <position kp="12.5" forcerange="-5 5" />
+          <joint damping="0.66" armature="0.012" frictionloss="0.09" />
+      </default>
+      <default class="mx28">
+            <position kp="12.5" forcerange="-2.5 2.5" />
+            <joint damping="0.30" armature="0.012" frictionloss="0.09" />
+      </default>
+  </default>
+	<option noslip_iterations="1"></option>
+
+  <asset>
+    <mesh name="base_link" file="base_link.STL"/>
+    <mesh name="head_yaw" file="head_yaw.STL"/>
+    <mesh name="head_pitch" file="head_pitch.STL"/>
+    <mesh name="right_shoulder_pitch" file="right_shoulder_pitch.STL"/>
+    <mesh name="right_shoulder_roll" file="right_shoulder_roll.STL"/>
+    <mesh name="right_elbow" file="right_elbow.STL"/>
+    <mesh name="left_shoulder_pitch" file="left_shoulder_pitch.STL"/>
+    <mesh name="left_shoulder_roll" file="left_shoulder_roll.STL"/>
+    <mesh name="left_elbow" file="left_elbow.STL"/>
+    <mesh name="left_hip_yaw" file="left_hip_yaw.STL"/>
+    <mesh name="left_hip_roll" file="left_hip_roll.STL"/>
+    <mesh name="left_hip_pitch" file="left_hip_pitch.STL"/>
+    <mesh name="left_knee" file="left_knee.STL"/>
+    <mesh name="left_ankle_pitch" file="left_ankle_pitch.STL"/>
+    <mesh name="left_ankle_roll" file="left_ankle_roll.STL"/>
+    <mesh name="right_hip_yaw" file="right_hip_yaw.STL"/>
+    <mesh name="right_hip_roll" file="right_hip_roll.STL"/>
+    <mesh name="right_hip_pitch" file="right_hip_pitch.STL"/>
+    <mesh name="right_knee" file="right_knee.STL"/>
+    <mesh name="right_ankle_pitch" file="right_ankle_pitch.STL"/>
+    <mesh name="right_ankle_roll" file="right_ankle_roll.STL"/>
+  </asset>
+
+  <worldbody>
+    <body name="torso_2023">
+      <freejoint name="root" />
+      <site name="torso" />
+      <inertial pos="-0.0239414 0.000375823 0.0957757" quat="0.503584 0.501397 -0.498582 0.496408" mass="2.97" diaginertia="0.00331051 0.00224441 0.0019005"/>
+      <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="base_link"/>
+      <body name="head_yaw" pos="-0.00435484 -2.16574e-05 0.208434">
+        <inertial pos="-0.00690716 0.000114918 0.0181588" quat="-0.0179453 0.706998 0.0177257 0.706766" mass="0.093" diaginertia="2.52004e-05 2.11517e-05 1.55753e-05"/>
+        <joint class="mx28" name="head_yaw" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708" actuatorfrcrange="-10 10"/>
+        <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="head_yaw"/>
+        <body name="head_pitch" pos="0.00435597 0.0229353 0.01875">
+          <inertial pos="0.0527232 -0.0229841 0.0182195" quat="0.999024 0.000255044 -0.0436543 -0.0066803" mass="0.192" diaginertia="0.000112486 0.000110317 6.76184e-05"/>
+          <joint class="mx28" name="head_pitch" pos="0 0 0" axis="0.015498 0.99988 0" range="-2.007 0" actuatorfrcrange="-10 10"/>
+          <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="head_pitch"/>
+          <site name="camera" pos="0.049 -0.023 0" quat="0 0.707107 0 -0.707107"/>
+        </body>
+      </body>
+      <site name="trunk" pos="-0.075 0 0.10" />
+      <body name="right_shoulder_pitch" pos="-0.00600533 -0.0875098 0.174434">
+        <inertial pos="0.00289625 -0.0205241 0" quat="0.571267 0.571267 0.416719 0.416719" mass="0.034" diaginertia="8.62195e-06 6.13178e-06 5.92602e-06"/>
+        <joint class="mx64" name="right_shoulder_pitch" pos="0 0 0" axis="-0.00743507 0.999972 0" range="-2.618 3.927" actuatorfrcrange="-10 10"/>
+        <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="right_shoulder_pitch"/>
+        <body name="right_shoulder_roll" pos="0.0177122 -0.0387728 0.025198">
+          <inertial pos="0.0357079 -0.00874009 -0.0244342" quat="0.501119 0.496353 0.4991 0.503401" mass="0.269" diaginertia="0.000106437 7.90925e-05 6.78037e-05"/>
+          <joint class="mx64" name="right_shoulder_roll" pos="0 0 0" axis="0 0 1" range="-1.5708 0.2" actuatorfrcrange="-10 10"/>
+          <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="right_shoulder_roll"/>
+          <body name="right_elbow" pos="0.129864 0.0242331 -0.007198" quat="0.999993 0 0 -0.00371756">
+            <inertial pos="0.0240217 -0.0290694 -0.0191352" quat="0.509826 0.493995 0.506159 0.489745" mass="0.237" diaginertia="0.000144649 0.000120873 7.27277e-05"/>
+            <joint class="mx64" name="right_elbow" pos="0 0 0" axis="0 1 0" range="-2.96707 0.05236" actuatorfrcrange="-10 10"/>
+            <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="right_elbow"/>
+          </body>
+        </body>
+      </body>
+      <body name="left_shoulder_pitch" pos="-0.00470422 0.0874813 0.174434">
+        <inertial pos="0.00320111 0.0204788 0" quat="0.420954 0.420954 0.568153 0.568153" mass="0.034" diaginertia="8.62195e-06 6.13178e-06 5.92602e-06"/>
+        <joint class="mx64" name="left_shoulder_pitch" pos="0 0 0" axis="0.00743507 0.999972 0" range="-2.618 3.927" actuatorfrcrange="-10 10"/>
+        <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="left_shoulder_pitch"/>
+        <body name="left_shoulder_roll" pos="0.0178884 0.0387917 0.0241">
+          <inertial pos="0.0358412 0.00822155 -0.0233522" quat="0.507278 0.502884 0.492464 0.497248" mass="0.269" diaginertia="0.00010644 7.90974e-05 6.78076e-05"/>
+          <joint class="mx64" name="left_shoulder_roll" pos="0 0 0" axis="0 0 1" range="-0.2 1.5708" actuatorfrcrange="-10 10"/>
+          <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="left_shoulder_roll"/>
+          <body name="left_elbow" pos="0.129489 -0.0261235 -0.0061">
+            <inertial pos="0.0242392 0.0291626 -0.0191352" quat="0.491639 0.507991 0.492111 0.507999" mass="0.237" diaginertia="0.000144649 0.000120873 7.27277e-05"/>
+            <joint class="mx64" name="left_elbow" pos="0 0 0" axis="-0.00743507 0.999972 0" range="-2.96707 0.05236" actuatorfrcrange="-10 10"/>
+            <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="left_elbow"/>
+          </body>
+        </body>
+      </body>
+      <body name="left_hip_yaw" pos="-0.00492875 0.0572832 0.00623583">
+        <inertial pos="0.00285122 -2.11995e-05 -0.0222179" quat="0.501862 0.50185 0.498131 0.498143" mass="0.05166" diaginertia="1.3688e-05 1.33046e-05 1.12475e-05"/>
+        <joint class="mx64" name="left_hip_yaw" pos="0 0 0" axis="0 0 1" range="-1 1" actuatorfrcrange="-10 10"/>
+        <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="left_hip_yaw"/>
+        <body name="left_hip_roll" pos="-0.0260793 0.000193907 -0.049802">
+          <inertial pos="0.00163148 -6.4034e-06 -0.0153596" quat="0.99841 0.0174174 0.0189993 -0.0501365" mass="0.34966" diaginertia="0.000143529 0.000142753 8.93349e-05"/>
+          <joint class="mx106" name="left_hip_roll" pos="0 0 0" axis="0.999972 0.00743507 0" range="-0.1396 1.5708" actuatorfrcrange="-10 10"/>
+          <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="left_hip_roll"/>
+          <body name="left_hip_pitch" pos="0.0275451 -0.0290056 0">
+            <inertial pos="0.00164072 0.0287943 -0.101964" quat="0.99942 -0.0200811 -0.0263409 -0.00792574" mass="0.27166" diaginertia="0.000138291 0.000121909 6.24167e-05"/>
+            <joint class="mx106" name="left_hip_pitch" pos="0 0 0" axis="0.00743507 0.999972 0" range="-2 0.6981" actuatorfrcrange="-10 10"/>
+            <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="left_hip_pitch"/>
+            <body name="left_knee" pos="0 0 -0.13111">
+              <inertial pos="0.0036855 0.0287734 -0.0581963" quat="0.709681 0.00820061 0.00813976 0.704428" mass="0.0946831" diaginertia="0.000141638 0.000138583 1.45981e-05"/>
+              <joint class="mx106" name="left_knee" pos="0 0 0" axis="0.00743507 0.999972 0" range="-0.0175 2.2689" actuatorfrcrange="-10 10"/>
+              <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="left_knee"/>
+              <body name="left_ankle_pitch" pos="0 0 -0.131085">
+                <inertial pos="-0.0259171 0.0289955 0.0153596" quat="0.998413 -0.0174806 -0.0189429 -0.0500697" mass="0.34966" diaginertia="0.000143528 0.000142754 8.93349e-05"/>
+                <joint class="mx106" name="left_ankle_pitch" pos="0 0 0" axis="0.00743507 0.999972 0" range="-1.5708 0.7854" actuatorfrcrange="-10 10"/>
+                <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="left_ankle_pitch"/>
+                <body name="left_ankle_roll" pos="-0.0275451 0.0290056 0">
+                  <site name="left_foot"  pos="0.0070 0.55 -0.35"/>
+                  <inertial pos="0.0339508 0.0132615 -0.0394223" quat="0.0168684 0.706835 -0.0169257 0.706975" mass="0.23266" diaginertia="0.000479106 0.000351029 0.000141021"/>
+                  <joint class="mx106" name="left_ankle_roll" pos="0 0 0" axis="0.999972 0.00743507 0" range="-1.5708 1.5708" actuatorfrcrange="-10 10"/>
+                  <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="left_ankle_roll"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="right_hip_yaw" pos="-0.0057808 -0.0573116 0.00623583">
+        <inertial pos="0.00285122 -2.11995e-05 -0.0222179" quat="0.501862 0.50185 0.498131 0.498143" mass="0.05166" diaginertia="1.3688e-05 1.33046e-05 1.12475e-05"/>
+        <joint class="mx64" name="right_hip_yaw" pos="0 0 0" axis="0 0 1" range="-1 1" actuatorfrcrange="-10 10"/>
+        <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="right_hip_yaw"/>
+        <body name="right_hip_roll" pos="-0.0260793 0.000193907 -0.049802">
+          <inertial pos="0.001628 -1.40784e-05 -0.0153596" quat="0.998758 -0.0173393 0.0190723 0.0426425" mass="0.34966" diaginertia="0.000143528 0.000142754 8.93349e-05"/>
+          <joint class="mx106" name="right_hip_roll" pos="0 0 0" axis="0.999972 0.00743507 0" range="-1.5708 0.1396" actuatorfrcrange="-10 10"/>
+          <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="right_hip_roll"/>
+          <body name="right_hip_pitch" pos="0.0279734 0.0285928 0">
+            <inertial pos="0.00120867 -0.0287555 -0.101964" quat="0.999451 0.0198708 -0.0264969 0.000828557" mass="0.27166" diaginertia="0.000138292 0.000121909 6.24159e-05"/>
+            <joint class="mx106" name="right_hip_pitch" pos="0 0 0" axis="-0.00743507 0.999972 0" range="-2 0.6981" actuatorfrcrange="-10 10"/>
+            <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="right_hip_pitch"/>
+            <body name="right_knee" pos="-1.18354e-05 6.00897e-05 -0.13111">
+              <inertial pos="0.00325179 -0.028825 -0.0581966" quat="0.709681 0.00823384 0.00817275 0.704428" mass="0.0946831" diaginertia="0.000141638 0.000138583 1.45981e-05"/>
+              <joint class="mx106" name="right_knee" pos="0 0 0" axis="-0.00743507 0.999972 0" range="-0.0175 2.2689" actuatorfrcrange="-10 10"/>
+              <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="right_knee"/>
+              <body name="right_ankle_pitch" pos="-1.22852e-05 0 -0.131085">
+                <inertial pos="-0.026342 -0.0286102 0.0153596" quat="0.998755 0.0172756 -0.0191283 0.0427092" mass="0.34966" diaginertia="0.000143529 0.000142753 8.93349e-05"/>
+                <joint class="mx106" name="right_ankle_pitch" pos="0 0 0" axis="-0.00743507 0.999972 0" range="-1.5708 0.7854" actuatorfrcrange="-10 10"/>
+                <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="right_ankle_pitch"/>
+                <body name="right_ankle_roll" pos="-0.0279734 -0.0285928 0">
+                  <site name="right_foot"  pos="0.0070 -0.55 -0.35"/>
+                  <inertial pos="0.0337495 -0.0138049 -0.0394223" quat="-0.0115621 0.706943 0.0115289 0.707082" mass="0.23266" diaginertia="0.000479106 0.000351025 0.000141025"/>
+                  <joint class="mx106" name="right_ankle_roll" pos="0 0 0" axis="0.999972 0.00743507 0" range="-1.5708 1.5708" actuatorfrcrange="-10 10"/>
+                  <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="right_ankle_roll"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="imu_link" pos="0.025 0 0.085">
+        <inertial pos="0 0 0" mass="0.01" diaginertia="1e-09 1e-09 1e-09"/>
+      </body>
+    </body>
+  </worldbody>
+
+  <sensor>
+        <gyro site="torso" name="gyro" />
+        <accelerometer site="torso" name="accelerometer" />
+  </sensor>
+  <actuator>
+        <position class="mx106" name="left_hip_roll" joint="left_hip_roll" ctrlrange="-2 0.9" />
+        <position class="mx106" name="left_hip_pitch" joint="left_hip_pitch" ctrlrange="-2.35619 0.785398" />
+        <position class="mx106" name="left_knee" joint="left_knee" ctrlrange=" -0.1396 2.4" />
+        <position class="mx106" name="left_ankle_pitch" joint="left_ankle_pitch" ctrlrange="-1.5708 0.9" />
+        <position class="mx106" name="left_ankle_roll" joint="left_ankle_roll" ctrlrange="-1.5708 1.5708" />
+        <position class="mx106" name="right_hip_roll" joint="right_hip_roll" ctrlrange="-0.1396 1.5708" />
+        <position class="mx106" name="right_hip_pitch" joint="right_hip_pitch" ctrlrange="-0.91 2" />
+        <position class="mx106" name="right_knee" joint="right_knee" ctrlrange=" -2.4 0.1396" />
+        <position class="mx106" name="right_ankle_pitch" joint="right_ankle_pitch" ctrlrange="-0.9 1.5708" />
+        <position class="mx106" name="right_ankle_roll" joint="right_ankle_roll" ctrlrange="-1.5708 1.5708" />
+
+        <position class="mx28" name="head_yaw" joint="head_yaw" ctrlrange="-1.5708 1.5708" />
+        <position class="mx28" name="head_pitch" joint="head_pitch" ctrlrange="-2.007 0" />
+        <position class="mx64" name="left_hip_yaw" joint="left_hip_yaw" ctrlrange="-0.78539 0.78539" />
+        <position class="mx64" name="right_hip_yaw" joint="right_hip_yaw" ctrlrange="-1 1" />
+        <position class="mx64" name="left_shoulder_pitch" joint="left_shoulder_pitch" ctrlrange="-3.1416 2.618" />
+        <position class="mx64" name="left_elbow" joint="left_elbow" ctrlrange="-1.5708 1.5708" />
+        <position class="mx64" name="right_shoulder_pitch" joint="right_shoulder_pitch" ctrlrange=" -2.618 3.1416" />
+        <position class="mx64" name="right_elbow" joint="right_elbow" ctrlrange="-1.5708 1.5708" />
+        <position class="mx64" name="left_shoulder_roll" joint="left_shoulder_roll" ctrlrange="-0.81 1.2" />
+        <position class="mx64" name="right_shoulder_roll" joint="right_shoulder_roll" ctrlrange="-1.2 0.81" />
+
+    </actuator>
+</mujoco>

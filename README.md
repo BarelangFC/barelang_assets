@@ -1,8 +1,9 @@
-# BFCBotK — URDF model (2025)
+# Barelang Assets — URDF model (2025)
 
-This repository contains the BFCBotK URDF and mesh files. The BFCBotK model and meshes are in the `BFCBotK/` folder.
+This repository contains the Barelang Robot models.
 
-![URDF preview](./BFCBotK.png)
+![models preview](./barelangK.png)
+![models preview](./barelangS.png)
 
 Instructions and Tips
 - URDF Viewers that you can use:
@@ -15,6 +16,6 @@ Instructions and Tips
   Note: If you want to convert URDF to mjcf, simplify each STL. You can do this using MeshLab with 
   Filters->Remeshing, Simplification and Reconstruction->Simplification: Quadric Edge Collapse Decimation.
 
-- Files of interest:
-  - BFCBotK/BFCBotK.urdf
-  - Meshes: all `.STL` files in `BFCBotK/`
+Note:
+- Fix XML model barelangS
+- Need to fix barelangK
