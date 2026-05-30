@@ -1,4 +1,4 @@
-# Barelang Assets — URDF model (2025)
+# Barelang Assets
 
 These're repository contains the Barelang Robot models.
 
