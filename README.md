@@ -1,4 +1,4 @@
-# Barelang Assets
+# Barelang FC Assets
 
 These're repository contains the Barelang Robot models.
 
